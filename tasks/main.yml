@@ -1,0 +1,31 @@
+---
+- name: get the plugin
+  get_url: url=http://munin-monitoring.org/export/ddc595889f8d61a865df2d7f5486ecb5e14a098f/munin-contrib/plugins/memcached/memcached_multi_ dest=/usr/share/munin/plugins/memcached_multi_ mode=0755
+
+- name: link memcached_multi_bytes
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_bytes
+  notify: reload munin
+
+- name: link memcached_multi_commands
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_commands
+  notify: reload munin
+
+- name: link memcached_multi_conns
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_conns
+  notify: reload munin
+
+- name: link memcached_multi_evictions
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_evictions
+  notify: reload munin
+
+- name: link memcached_multi_items
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_items
+  notify: reload munin
+
+- name: link memcached_multi_memory
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_memory
+  notify: reload munin
+
+- name: link memcached_multi_unfetched
+  file: state=link src=/usr/share/munin/plugins/memcached_multi_ dest=/etc/munin/plugins/memcached_multi_unfetched
+  notify: reload munin
